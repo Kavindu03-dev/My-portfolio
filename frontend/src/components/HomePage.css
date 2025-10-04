@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
-  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
   position: relative;
+  z-index: 1;
 }
 
 .home-container {
