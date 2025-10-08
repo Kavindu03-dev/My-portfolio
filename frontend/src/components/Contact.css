@@ -153,8 +153,21 @@
   box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
 }
 
+.social-link:hover .social-icon svg {
+  transform: scale(1.1);
+  color: var(--accent-blue);
+}
+
 .social-icon {
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon svg {
+  transition: all 0.3s ease;
 }
 
 .social-name {

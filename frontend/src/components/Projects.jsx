@@ -86,7 +86,6 @@ const getIcon = (iconType) => {
 };
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
 
   const projects = [
     {
@@ -94,10 +93,9 @@ const Projects = () => {
       title: "My Portfolio Website",
       description: "A modern, responsive portfolio website built with React.js and Vite. Features dark blue theme, smooth animations, and showcases AI/ML skills and projects with original logos.",
       category: "web-development",
-      technologies: ["React", "JavaScript", "CSS", "Vite", "HTML"],
+      technologies: ["React", "JavaScript", "CSS3", "Vite", "HTML5", "Responsive Design"],
       github: "https://github.com/Kavindu03-dev/My-portfolio",
       live: "#",
-      icon: "web",
       status: "Completed",
       year: "2025"
     },
@@ -106,10 +104,9 @@ const Projects = () => {
       title: "Computer Parts Management System",
       description: "A comprehensive Java-based management system for computer parts inventory. Features database management, user interface, and efficient tracking of computer components.",
       category: "java-development",
-      technologies: ["Java", "Database", "OOP", "Management System"],
+      technologies: ["Java", "MySQL", "Swing", "OOP", "JDBC", "File I/O"],
       github: "https://github.com/Kavindu03-dev/Computer-parts-management-system",
       live: "#",
-      icon: "code",
       status: "Completed",
       year: "2024"
     },
@@ -118,10 +115,9 @@ const Projects = () => {
       title: "Driving School Management System",
       description: "A JavaScript-based management system for driving schools. Handles student records, scheduling, instructor management, and course tracking.",
       category: "web-development",
-      technologies: ["JavaScript", "Management System", "Database", "Web App"],
+      technologies: ["JavaScript", "HTML5", "CSS3", "Local Storage", "DOM Manipulation", "Web App"],
       github: "https://github.com/Kavindu03-dev/driving-school-management",
       live: "#",
-      icon: "database",
       status: "Completed",
       year: "2025"
     },
@@ -130,10 +126,9 @@ const Projects = () => {
       title: "Snake Game",
       description: "A modern implementation of the classic Snake game, available in both Python (using pygame) and Web (HTML5/JavaScript) versions. Features progressive difficulty, obstacle systems, sound effects, and multiple control schemes.",
       category: "game-development",
-      technologies: ["Python", "Pygame", "JavaScript", "HTML5", "CSS3"],
+      technologies: ["Python", "Pygame", "JavaScript", "HTML5", "CSS3", "Canvas API", "Game Development"],
       github: "https://github.com/Kavindu03-dev/Snake-game",
       live: "https://byte-snake.netlify.app/",
-      icon: "game",
       status: "Completed",
       year: "2025"
     },
@@ -142,39 +137,36 @@ const Projects = () => {
       title: "Real Estate AI",
       description: "An AI-powered tool for real estate market analysis and property valuation. Uses machine learning algorithms to predict property prices and provide market insights for investors and buyers.",
       category: "ai-ml",
-      technologies: ["Python", "Machine Learning", "AI", "Data Analysis", "Pandas", "Scikit-learn"],
+      technologies: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Jupyter"],
       github: "https://github.com/Kavindu03-dev/Real-estate-AI",
       live: "#",
-      icon: "ai",
       status: "Completed",
       year: "2025"
     },
     {
       id: 6,
       title: "ASCII Art Generator",
-      description: "A Python script that converts images into ASCII art. Features customizable character sets, size options, and color mapping. Perfect for creating text-based artwork from photos.",
-      category: "python-development",
-      technologies: ["Python", "Image Processing", "PIL", "ASCII Art", "Computer Vision"],
-      github: "https://github.com/Kavindu03-dev/Ascii-art-generator",
+      description: "A web-based ASCII art generator that converts images into text-based artwork. Features live preview, multiple art types, customizable character sets, and a complete gallery system. Built with modern web technologies for an interactive user experience.",
+      category: "web-development",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Canvas API", "Image Processing", "Web App"],
+      github: "https://github.com/Kavindu03-dev/ASCII-art-generator-",
       live: "#",
-      icon: "art",
       status: "Completed",
       year: "2024"
+    },
+    {
+      id: 7,
+      title: "Video Game Success Prediction",
+      description: "A comprehensive machine learning project that predicts video game success using various features like genre, platform, price, and description text. Features 14 Jupyter notebooks covering data scraping, NLP analysis, and multiple ML models including Linear Regression, Random Forests, and ensemble methods. Includes an interactive dashboard for indie developers to optimize game parameters.",
+      category: "ai-ml",
+      technologies: ["Python", "Machine Learning", "Jupyter Notebooks", "NLP", "Pandas", "NumPy", "Scikit-learn", "Web Scraping", "Data Analysis", "Random Forest", "Linear Regression", "Streamlit"],
+      github: "https://github.com/Kavindu03-dev/Video-Game-Success-Prediction",
+      live: "https://videogame.streamlit.app/",
+      status: "Completed",
+      year: "2025"
     }
   ];
 
-  const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web-development', label: 'Web Development' },
-    { id: 'java-development', label: 'Java Development' },
-    { id: 'game-development', label: 'Game Development' },
-    { id: 'ai-ml', label: 'AI/ML' },
-    { id: 'python-development', label: 'Python Development' }
-  ];
-
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="projects-section">
@@ -187,25 +179,10 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="filter-container">
-          {filters.map(filter => (
-            <button
-              key={filter.id}
-              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.id)}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-
         <div className="projects-list">
-          {filteredProjects.map(project => (
+          {projects.map(project => (
             <div key={project.id} className="project-card">
               <div className="project-header">
-                <div className="project-icon">
-                  {getIcon(project.icon)}
-                </div>
                 <div className="project-meta">
                   <div className="project-status">
                     <span className="status-badge">{project.status}</span>

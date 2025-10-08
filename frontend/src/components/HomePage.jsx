@@ -10,6 +10,15 @@ const HomePage = () => {
     }
   };
 
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Kavindu_Vishwajith_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="home-section">
       <div className="home-container">
@@ -35,9 +44,9 @@ const HomePage = () => {
               </button>
               <button 
                 className="btn btn-secondary"
-                onClick={() => scrollToSection('contact')}
+                onClick={downloadResume}
               >
-                Get In Touch
+                MY Resume
               </button>
             </div>
           </div>
@@ -49,10 +58,6 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="scroll-indicator">
-          <div className="scroll-arrow"></div>
-          <span>Scroll to explore</span>
-        </div>
       </div>
     </section>
   );
