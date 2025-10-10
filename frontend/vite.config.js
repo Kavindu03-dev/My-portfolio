@@ -9,7 +9,7 @@ export default defineConfig({
     react(), 
     tailwindcss()
   ],
-  base: '/My-portfolio/', // GitHub Pages base path
+  base: process.env.NODE_ENV === 'production' ? '/My-portfolio/' : '/',
   server: {
     port: 3000,
     open: true // This will automatically open your browser
