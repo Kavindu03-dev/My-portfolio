@@ -12,5 +12,6 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true // This will automatically open your browser
-  }
+  },
+  base: '/My-portfolio/' // Add this for GitHub Pages
 })
