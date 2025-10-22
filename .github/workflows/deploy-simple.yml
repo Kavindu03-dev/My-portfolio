@@ -1,8 +1,13 @@
-name: Deploy Portfolio
+name: Deploy Portfolio (legacy - manual)
 
+# This legacy workflow using peaceiris/actions-gh-pages is kept for manual runs only.
+# The repository now uses the official GitHub Pages workflow in deploy.yml.
+# To avoid conflicts and 403 errors, this workflow no longer runs on push.
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -29,7 +34,7 @@ jobs:
         cd frontend
         npm run build
         
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages (legacy)
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
