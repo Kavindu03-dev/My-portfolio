@@ -108,8 +108,8 @@
 }
 
 .hero-avatar {
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -118,8 +118,8 @@
 }
 
 .profile-image {
-  width: 280px;
-  height: 280px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #64ffda;
@@ -158,13 +158,13 @@
   }
   
   .hero-avatar {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
   }
   
   .profile-image {
-    width: 230px;
-    height: 230px;
+    width: 280px;
+    height: 280px;
   }
   
   .hero-buttons {
@@ -186,13 +186,13 @@
   }
   
   .hero-avatar {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
   }
   
   .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
   
   .btn {
